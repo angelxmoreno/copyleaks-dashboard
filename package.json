@@ -1,0 +1,22 @@
+{
+  "name": "copyleaks-dashboard",
+  "version": "1.0.0",
+  "description": "A desktop application built in ElectronJS for viewing CopyLeaks api data",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/angelxmoreno/copyleaks-dashboard.git",
+  "keywords": [
+    "Electron",
+    "Plagiarism",
+    "CopyLeaks"
+  ],
+  "author": "Angel S. Moreno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angelxmoreno/copyleaks-dashboard/issues"
+  },
+  "homepage": "https://github.com/angelxmoreno/copyleaks-dashboard#readme",
+  "dependencies": {}
+}
