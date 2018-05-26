@@ -2,8 +2,11 @@
   "name": "copyleaks-dashboard",
   "version": "1.0.0",
   "description": "A desktop application built in ElectronJS for viewing CopyLeaks api data",
-  "main": "main.js",
+  "main": "src/main/index.js",
   "scripts": {
+    "start": "electron src/main/index.js",
+    "build:dev": "./node_modules/.bin/webpack --mode development",
+    "build:prod": "./node_modules/.bin/webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/angelxmoreno/copyleaks-dashboard.git",
@@ -18,5 +21,10 @@
     "url": "https://github.com/angelxmoreno/copyleaks-dashboard/issues"
   },
   "homepage": "https://github.com/angelxmoreno/copyleaks-dashboard#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4"
+  }
 }
