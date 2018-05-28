@@ -1,9 +1,13 @@
+const ROOT = __dirname + '/../../';
+const HTML = ROOT + 'html/';
+const index_file = HTML + 'index.html';
+const ENV = process.env.NODE_ENV;
 const {app, BrowserWindow} = require('electron');
+const fs = require('fs');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
-const index_file = __dirname + '/../../html/index.html';
 
 function createWindow() {
     // Create the browser window.
@@ -12,8 +16,12 @@ function createWindow() {
     // and load the index.html of the app.
     win.loadFile(index_file);
 
-    // Open the DevTools.
-    win.webContents.openDevTools();
+    if(ENV !== 'production'){
+        // Open the DevTools.
+        win.webContents.openDevTools();
+
+        bootlegWatcher();
+    }
 
     // Emitted when the window is closed.
     win.on('closed', () => {
@@ -22,6 +30,14 @@ function createWindow() {
         // when you should delete the corresponding element.
         win = null
     })
+}
+
+function bootlegWatcher() {
+    fs.watch(HTML, {recursive: true, encoding: 'utf8'}, (eventType, filename) => {
+            console.log(eventType, filename);
+            win.reload();
+        }
+    );
 }
 
 // This method will be called when Electron has finished

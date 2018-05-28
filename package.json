@@ -4,7 +4,8 @@
   "description": "A desktop application built in ElectronJS for viewing CopyLeaks api data",
   "main": "src/main/index.js",
   "scripts": {
-    "start": "electron src/main/index.js",
+    "start:dev": "NODE_ENV=development webpack --mode development --watch | electron src/main/index.js",
+    "build:watch": "./node_modules/.bin/webpack --mode development --watch",
     "build:dev": "./node_modules/.bin/webpack --mode development",
     "build:prod": "./node_modules/.bin/webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
