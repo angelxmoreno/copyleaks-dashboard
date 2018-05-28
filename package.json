@@ -23,8 +23,13 @@
   },
   "homepage": "https://github.com/angelxmoreno/copyleaks-dashboard#readme",
   "dependencies": {
+    "angular": "^1.7.0",
+    "angular-resource": "^1.7.0",
+    "angular-ui-router": "^1.0.18",
     "bootstrap": "3",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "underscore": "^1.9.0",
+    "underscore.string": "^3.3.4"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
