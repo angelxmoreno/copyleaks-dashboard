@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import layoutMod from './components/layout';
-import homeMod from './components/home';
+import homeMod from './components/states/home';
 
 const deps = [
     uiRouter,
