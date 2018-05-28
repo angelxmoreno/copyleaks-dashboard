@@ -21,9 +21,15 @@
     "url": "https://github.com/angelxmoreno/copyleaks-dashboard/issues"
   },
   "homepage": "https://github.com/angelxmoreno/copyleaks-dashboard#readme",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "3",
+    "jquery": "^3.3.1"
+  },
   "devDependencies": {
+    "css-loader": "^0.28.11",
     "electron": "^2.0.2",
+    "file-loader": "^1.1.11",
+    "style-loader": "^0.21.0",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4"
   }
