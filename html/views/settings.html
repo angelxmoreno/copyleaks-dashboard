@@ -1,0 +1,44 @@
+<div class="page-header">
+    <h1>
+        Settings
+        <small>Global Configuration</small>
+    </h1>
+</div>
+
+<form name="ApiCredentialsForm" novalidate class="form-horizontal"
+      ng-submit="$ctrl.updateApiCredentials(ApiCredentialsForm)">
+    <section>
+        <legend>API Credentials</legend>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Account Email Address"
+                    ng-model="$ctrl.ApiSettings.email">
+        </div>
+        <div class="form-group">
+            <label for="access_key">Access Key</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="access_key"
+                    placeholder="API Access Key"
+                    ng-model="$ctrl.ApiSettings.access_key">
+        </div>
+
+        <div class="form-group">
+            <label for="product">API Product</label>
+
+            <select
+                    class="form-control"
+                    id="product"
+                    placeholder="CopyLeaks Product"
+                    ng-model="$ctrl.ApiSettings.product">
+                <option ng-repeat="option in $ctrl.ApiProducts" value="{{option.value}}">{{option.label}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Save API Credentials</button>
+    </section>
+</form>

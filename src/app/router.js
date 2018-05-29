@@ -1,18 +1,26 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import layoutMod from './components/layout';
-import homeMod from './components/states/home';
+import homeState from './components/states/home';
+import settingsState from './components/states/settings';
 
 const deps = [
     uiRouter,
     layoutMod.name,
-    homeMod.name
+    homeState.name,
+    settingsState.name
 ];
 const Routes = [
     {
         name: 'rootView',
         component: 'layout',
         abstract: true
+    },
+    {
+        name: 'settings',
+        parent:'rootView',
+        component: 'settings',
+        url: '/settings',
     },
     {
         name: 'home',
