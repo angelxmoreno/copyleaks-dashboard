@@ -2,8 +2,17 @@ const ROOT = __dirname + '/../../';
 const HTML = ROOT + 'html/';
 const index_file = HTML + 'index.html';
 const ENV = process.env.NODE_ENV;
+/*-------------------------------------------------*/
 const {app, BrowserWindow} = require('electron');
 const fs = require('fs');
+const path = require('path');
+/*-------------------------------------------------*/
+const appDataDir = app.getPath('appData');
+const userDataDir = path.join(appDataDir, app.getName());
+
+app.setName(process.env.npm_package_productName);
+app.setPath('userData', userDataDir);
+/*-------------------------------------------------*/
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -16,7 +25,7 @@ function createWindow() {
     // and load the index.html of the app.
     win.loadFile(index_file);
 
-    if(ENV !== 'production'){
+    if (ENV !== 'production') {
         // Open the DevTools.
         win.webContents.openDevTools();
 

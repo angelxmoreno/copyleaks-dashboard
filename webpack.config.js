@@ -31,6 +31,14 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-        })
-    ]
+        }),
+        new webpack.ExternalsPlugin('commonjs', [
+            'electron'
+        ])
+    ],
+    target: 'node',
+    externals: {
+        fs: 'commonjs fs',
+        path: 'commonjs path'
+    }
 };
