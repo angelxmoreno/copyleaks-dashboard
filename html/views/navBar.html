@@ -1,12 +1,16 @@
 <nav class="navbar navbar-default">
 
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">ZingChart.com</a>
+        <a class="navbar-brand" href ui-sref="home">CopyLeaks Dashboard</a>
     </div>
 
     <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Admin</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li ui-sref-active="active">
+            <a ui-sref="home">Home</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="settings">Settings</a>
+        </li>
         <li><a href="#">Docs</a></li>
         <li><a href="#">Blog</a></li>
     </ul>
