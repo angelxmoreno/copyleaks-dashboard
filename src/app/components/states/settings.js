@@ -33,7 +33,6 @@ function Controller(Settings, CopyLeaks, Dialog) {
     };
 
     this.updateApiCredentials = (form) => {
-        console.log('this.ApiSettings', this.ApiSettings);
         if (form.$valid) {
             CopyLeaks.checkAccess(this.ApiSettings).then(() => {
                 Dialog.successMsg('API Credentials are good', false, () => {
@@ -42,6 +41,8 @@ function Controller(Settings, CopyLeaks, Dialog) {
             }).catch((err) => {
                 Dialog.errorMsg(err.error);
             });
+        } else {
+            Dialog.errorMsg('Form is invalid');
         }
     };
 }

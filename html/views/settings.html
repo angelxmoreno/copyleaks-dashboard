@@ -13,6 +13,7 @@
             <label for="email">Email address</label>
             <input
                     type="email"
+                    required
                     class="form-control"
                     id="email"
                     placeholder="Account Email Address"
@@ -22,6 +23,7 @@
             <label for="access_key">Access Key</label>
             <input
                     type="text"
+                    required
                     class="form-control"
                     id="access_key"
                     placeholder="API Access Key"
@@ -34,7 +36,7 @@
             <select
                     class="form-control"
                     id="product"
-                    placeholder="CopyLeaks Product"
+                    required
                     ng-model="$ctrl.ApiSettings.product">
                 <option ng-repeat="option in $ctrl.ApiProducts" value="{{option.value}}">{{option.label}}</option>
             </select>
