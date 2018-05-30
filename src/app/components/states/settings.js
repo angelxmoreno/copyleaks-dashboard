@@ -26,18 +26,17 @@ function Controller(Settings, CopyLeaks, Dialog) {
         },
     ];
 
+    let APIConfig = CopyLeaks.getConfig();
     this.ApiSettings = {
-        email: Settings.get('Api.email'),
-        access_key: Settings.get('Api.access_key'),
-        product: Settings.get('Api.product'),
+        email: APIConfig.email,
+        access_key: APIConfig.access_key,
+        product: APIConfig.product,
     };
 
     this.updateApiCredentials = (form) => {
         if (form.$valid) {
-            CopyLeaks.checkAccess(this.ApiSettings).then(() => {
-                Dialog.successMsg('API Credentials are good', false, () => {
-                    Settings.set('Api', this.ApiSettings);
-                });
+            CopyLeaks.login(this.ApiSettings).then(() => {
+                Dialog.successMsg('API Credentials are good');
             }).catch((err) => {
                 Dialog.errorMsg(err.error);
             });

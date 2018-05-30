@@ -1,0 +1,58 @@
+<div class="page-header">
+    <h1>
+        Dashboard
+    </h1>
+</div>
+
+{{$ctrl.isAuthorized}}
+<div class="row">
+    <div class="col-md-4">
+        <credits product="'businesses'"></credits>
+    </div>
+    <div class="col-md-4">
+        <credits product="'education'"></credits>
+    </div>
+
+    <div class="col-md-4">
+        <credits product="'websites'"></credits>
+    </div>
+
+</div>
+
+<table class="table table-striped table-condensed">
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+
+        <th>
+            Date
+        </th>
+        <th>
+            Status
+        </th>
+        <th ng-repeat="field in $ctrl.customFields">
+            {{field}}
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="row in $ctrl.processList">
+        <td>
+            {{row.ProcessId}}
+        </td>
+        <td>
+            {{row.CreationTimeUTC| date:'medium'}}
+        </td>
+        <td>
+            {{row.Status}}
+        </td>
+
+        <td ng-repeat="field in $ctrl.customFields">
+            {{row.CustomFields[field]}}
+        </td>
+    </tr>
+    </tbody>
+</table>

@@ -1,15 +1,16 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import layoutMod from './components/layout';
-import homeState from './components/states/home';
+import dashboardState from './components/states/dashboard';
 import settingsState from './components/states/settings';
 
-const deps = [
+const dependencies = [
     uiRouter,
     layoutMod.name,
-    homeState.name,
+    dashboardState.name,
     settingsState.name
 ];
+
 const Routes = [
     {
         name: 'rootView',
@@ -18,14 +19,14 @@ const Routes = [
     },
     {
         name: 'settings',
-        parent:'rootView',
+        parent: 'rootView',
         component: 'settings',
         url: '/settings',
     },
     {
-        name: 'home',
-        parent:'rootView',
-        component: 'home',
+        name: 'dashboard',
+        parent: 'rootView',
+        component: 'dashboard',
         url: '/',
     },
 ];
@@ -39,5 +40,5 @@ function config($stateProvider, $urlRouterProvider) {
 }
 
 export default angular
-    .module('routeMod', deps)
+    .module('routeMod', dependencies)
     .config(config);
