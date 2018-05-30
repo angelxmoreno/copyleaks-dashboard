@@ -1,11 +1,9 @@
 import angular from 'angular';
 import navBarMod from './navBar';
-import sidePanel from './sidePanel';
 
 const name = 'layout';
 const dependencies = [
-    navBarMod.name,
-    sidePanel.name
+    navBarMod.name
 ];
 const componentConfig = {
     templateUrl: 'views/' + name + '.html',
